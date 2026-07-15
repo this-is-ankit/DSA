@@ -1,16 +1,15 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main (){
-    int i,n;
+    int i,j,n;
     char c,k='A';
     cin >> n;
-    for(i = 1 ;i<=n;i++){
-       
-        for(c = 'A';c <= k;c++){
-            cout << k;
+    k+=(n-1);
+    for(i = k ;i>= 'A';i--){
+        for(c = i;c <= k;c++){
+            cout << c << " ";
             
         }
-         k++;
         cout << endl;
     }
 }
