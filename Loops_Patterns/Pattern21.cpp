@@ -12,13 +12,14 @@ int main()
             {
                 for (j = 1; j <= n; j++)
                     cout << "*";
+                continue;
             }
             if (j == 1 || j == n)
                 cout << "*";
 
             else
             {
-                cout << "_";
+                cout << " ";
             }
         }
         cout << endl;
