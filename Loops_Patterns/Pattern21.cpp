@@ -8,19 +8,12 @@ int main()
     {
         for (j = 1; j <= n; j++)
         {
-            if (i == n || i == 1)
-            {
-                for (j = 1; j <= n; j++)
-                    cout << "*";
-                continue;
+            if (i == n || i == 1 || j == 1 || j == n ){
+                cout <<  "*";
             }
-            if (j == 1 || j == n)
-                cout << "*";
-
             else
-            {
-                cout << " ";
-            }
+                cout  << " ";
+            
         }
         cout << endl;
     }
