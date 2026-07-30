@@ -14,6 +14,6 @@ int main()
 {
     int n;
     cin >> n;
-    cout  << sum(n);
-
+    cout  << sum(n) << endl;
+    return 0;
 }
