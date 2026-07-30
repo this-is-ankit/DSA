@@ -1,18 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
-bool palindrome(int i, string &s)
+bool palindrome(string s)
 {
-    if (i >= s.size() / 2)
-        return true;
-    if (s[i] != s[s.size() - i - 1])
-        return false;
+    if (s.size() <= 1) return true;
 
-    return palindrome(i+1,s);
+    if (s.front() != s.back())
+    {
+        return false;
+    }
+
+    return palindrome(s.substr(1,s.size()-2));
 }
 int main()
 {
     string s;
     cin >> s;
-    cout << palindrome(0, s);
+    // cout<< s.length();
+    // cout<< s.size();
+    cout << palindrome(s);
     return 0;
 }
