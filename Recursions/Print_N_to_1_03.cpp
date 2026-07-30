@@ -3,7 +3,7 @@ using namespace std;
 void recursion_print(int i)
 {
     cout << i << endl;
-    if (i == 1)
+    if (i <= 1)
         return;
     else
     {
