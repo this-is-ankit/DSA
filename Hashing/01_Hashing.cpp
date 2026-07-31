@@ -15,7 +15,7 @@ int main()
     {
         hashh[arr[i]] += 1;
     }
-    cout << "Enter the number of queries : ";
+    cout << "Enter the total number of queries : ";
     int q;
     cin >> q;
     cout << "Enter the each querie : ";
