@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 // int hashh[13] = {0}; // this can maximum go upto 10^7 outside main like hashh[1000000] that is Globally
+// Beyond this it will give  a segmentation error
 
 int main()
 {
