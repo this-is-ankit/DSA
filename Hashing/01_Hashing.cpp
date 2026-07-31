@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
+// int hashh[13] = {0}; // this can maximum go upto 10^7 outside main like hashh[1000000] that is Globally
+
 int main()
 {
     int n;
@@ -10,7 +12,7 @@ int main()
     {
         cin >> arr[i];
     }
-    int hashh[13] = {0};
+    int hashh[13] = {0}; // this can maximum go upto 10^6 inside main like hashh[1000000]
     for (int i = 0; i < n; i++)
     {
         hashh[arr[i]] += 1;
