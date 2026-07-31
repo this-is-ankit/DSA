@@ -24,7 +24,7 @@ int main()
     {
         int num;
         cin >> num;
-        cout  << num << " appears " <<hashh[num] << " times" << endl;
+        cout  << num << " appears " << hashh[num] << " times" << endl;
     }
     return 0;
 }
