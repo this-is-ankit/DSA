@@ -14,6 +14,7 @@ int main()
         cin >> arr[i];
     }
     int hashh[13] = {0}; // this can maximum go upto 10^6 inside main like hashh[1000000]
+    // Beyond this it will give  a segmentation error
     for (int i = 0; i < n; i++)
     {
         hashh[arr[i]] += 1;
