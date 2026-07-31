@@ -7,7 +7,7 @@ int main() {
     map<int,int> mp;
     for (int i = 0; i < n; i++)
     {
-        cin >> arr[n];
+        cin >> arr[i];
         mp[arr[i]]++;
     }
     int q;
@@ -19,5 +19,4 @@ int main() {
         cout << mp[number] << endl;
     }
     return 0;
-    
 }
