@@ -27,8 +27,10 @@ bool predictTheWinner(vector<int> &nums)
 int main()
 {
     int n;
+    cout << "Enter the total number of elements : ";
     cin >> n;
     vector<int> nums;
+    cout << "Enter each element one by one : ";
     for (int i = 0; i < n; i++)
     {
         int j;
