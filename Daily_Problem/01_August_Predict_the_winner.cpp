@@ -31,7 +31,9 @@ int main()
     vector<int> nums;
     for (int i = 0; i < n; i++)
     {
-        cin >> nums[i];
+        int j;
+        cin >> j;
+        nums.push_back(j);
     }
     cout << predictTheWinner(nums);
 
