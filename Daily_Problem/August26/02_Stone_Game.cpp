@@ -6,13 +6,11 @@
 
 // Assuming Alice and Bob play optimally, return true if Alice wins the game, or false if Bob wins.
 
- 
-
 // Example 1:
 
 // Input: piles = [5,3,4,5]
 // Output: true
-// Explanation: 
+// Explanation:
 // Alice starts first, and can only take the first 5 or the last 5.
 // Say she takes the first 5, so that the row becomes [3, 4, 5].
 // If Bob takes 3, then the board is [4, 5], and Alice takes 5 to win with 10 points.
@@ -24,8 +22,6 @@
 // Input: piles = [3,7,2,3]
 // Output: true
 
- 
-
 // Constraints:
 
 //     2 <= piles.length <= 500
@@ -33,28 +29,33 @@
 //     1 <= piles[i] <= 500
 //     sum(piles[i]) is odd.
 
- 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-bool stoneGame(vector<int>& piles) {
-        int n = piles.size();
-        vector<int> dp(piles.begin(), piles.end());
-        for (int len = 2; len <= n; ++len) {
-            for (int left = 0; left <= n - len; ++left) {
-                int right = left + len - 1;
-                dp[left] =
-                    max(piles[left] - dp[left + 1], piles[right] - dp[left]);
-            }
+bool stoneGame(vector<int> &piles)
+{
+    int n = piles.size();
+    vector<int> dp(piles.begin(), piles.end());
+    for (int len = 2; len <= n; ++len)
+    {
+        for (int left = 0; left <= n - len; ++left)
+        {
+            int right = left + len - 1;
+            dp[left] =
+                max(piles[left] - dp[left + 1], piles[right] - dp[left]);
         }
-        return dp[0] >= 0;
     }
-int main(){
+    return dp[0] >= 0;
+}
+int main()
+{
     vector<int> piles;
     int n;
     cin >> n;
     for (int i = 0; i < n; i++)
     {
-        cin >> piles[i];
-    }
-    
+        int j;
+        cin >> j;
+        piles.push_back(j);
+        
+    }cout << stoneGame(piles);
 }
