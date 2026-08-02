@@ -4,12 +4,12 @@ void Merge(int arr[], int left, int mid, int right)
 {
     int temp[100];
     int low = left, high = mid + 1, j = 0;
-    while (left <= mid && high <= right)
+    while (low <= mid && high <= right)
     {
-        if (arr[left] <= arr[high])
+        if (arr[low] <= arr[high])
         {
-            temp[j] = arr[left];
-            left++;
+            temp[j] = arr[low];
+            low++;
             j++;
         }
         else
@@ -19,10 +19,10 @@ void Merge(int arr[], int left, int mid, int right)
             j++;
         }
     }
-    while (left <= mid)
+    while (low <= mid)
     {
-        temp[j] = arr[left];
-        left++;
+        temp[j] = arr[low];
+        low++;
         j++;
     }
     while (right >= high)
@@ -31,12 +31,18 @@ void Merge(int arr[], int left, int mid, int right)
         high++;
         j++;
     }
+
+    for (int i = left; i <= right; i++)
+    {
+        arr[i] = temp[i - left];
+    }
 }
 void MergeSort(int arr[], int left, int right)
 {
-    int mid = (left + right) / 2;
     if (left >= right)
         return;
+    int mid = (left + right) / 2;
+
     MergeSort(arr, left, mid);
     MergeSort(arr, mid + 1, right);
     Merge(arr, left, mid, right);
@@ -44,8 +50,8 @@ void MergeSort(int arr[], int left, int right)
 int main()
 {
     int arr[] = {2, 5, 1, 3, 4};
-    MergeSort(arr,0,4);
-    for (int i = 0; i < 5;i++)
+    MergeSort(arr, 0, 4);
+    for (int i = 0; i < 5; i++)
     {
         cout << arr[i] << " ";
     }
