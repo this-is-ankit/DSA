@@ -2,34 +2,31 @@
 using namespace std;
 void Merge(int arr[], int left, int mid, int right)
 {
-    int temp[100];
-    int low = left, high = mid + 1, j = 0;
+    vector<int> temp;
+    int low = left, high = mid + 1;
     while (low <= mid && high <= right)
     {
         if (arr[low] <= arr[high])
         {
-            temp[j] = arr[low];
+            temp.push_back(arr[low]);
             low++;
-            j++;
         }
         else
         {
-            temp[j] = arr[high];
+            temp.push_back(arr[high]);
             high++;
-            j++;
         }
     }
     while (low <= mid)
     {
-        temp[j] = arr[low];
+        temp.push_back(arr[low]);
         low++;
-        j++;
+
     }
     while (right >= high)
     {
-        temp[j] = arr[high];
+        temp.push_back(arr[high]);
         high++;
-        j++;
     }
 
     for (int i = left; i <= right; i++)
