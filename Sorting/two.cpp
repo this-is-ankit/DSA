@@ -36,9 +36,9 @@ void mergeit(vector<int> &nums1, int m, vector<int> &nums2, int n)
         high++;
     }
 
-    for (int i = m; i < m + n; i++)
+    for (int i = 0; i < m + n; i++)
     {
-        nums1[i] = temp2[i - m];
+        nums1[i] = temp2[i];
     }
 }
 
