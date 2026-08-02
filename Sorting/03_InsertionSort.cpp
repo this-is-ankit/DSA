@@ -7,6 +7,7 @@ void InsetionSort(int arr[] , int n){
         while (j>0 && arr[j-1] > arr[j])
         {
             swap(arr[j] ,arr[j-1] );
+            j--;
         }
     }
 }
