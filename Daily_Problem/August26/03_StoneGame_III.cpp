@@ -40,5 +40,13 @@
 //     1 <= stoneValue.length <= 5 * 104
 //     -1000 <= stoneValue[i] <= 1000
 
+#include<bits/stdc++.h>
+using namespace std;
+ string stoneGameIII(vector<int> &stoneValue){
+    
+ }
 
+int main() {
+
+}
 
