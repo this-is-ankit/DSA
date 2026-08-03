@@ -10,8 +10,6 @@
 
 // Return "Alice" if Alice will win, "Bob" if Bob will win, or "Tie" if they will end the game with the same score.
 
- 
-
 // Example 1:
 
 // Input: stoneValue = [1,2,3,7]
@@ -33,20 +31,50 @@
 // Output: "Tie"
 // Explanation: Alice cannot win this game. She can end the game in a draw if she decided to choose all the first three piles, otherwise she will lose.
 
- 
-
 // Constraints:
 
 //     1 <= stoneValue.length <= 5 * 104
 //     -1000 <= stoneValue[i] <= 1000
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
- string stoneGameIII(vector<int> &stoneValue){
-    
- }
+string stoneGameIII(vector<int> &stoneValue)
+{
+    int n = stoneValue.size();
+    vector<int> dp(n + 1, 0);
 
-int main() {
+    for (int i = n - 1; i >= 0; --i)
+    {
+        int take = 0;
+        int max_diff = INT_MIN;
 
+        for (int j = 0; j < 3 && i + j < n; ++j)
+        {
+            take += stoneValue[i + j];
+            max_diff = max(max_diff, take - dp[i + j + 1]);
+        }
+        dp[i] = max_diff;
+    }
+
+    if (dp[0] > 0)
+        return "Alice";
+    if (dp[0] < 0)
+        return "Bob";
+    return "Tie";
 }
 
+int main()
+{
+    vector<int> v;
+    int n;
+    cin >> n;
+    for (int i = 0; i < n; i++)
+    {
+        int j;
+        cin >> j;
+        v.push_back(j);
+    }
+
+    cout << stoneGameIII(v);
+    return 0;
+}
