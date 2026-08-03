@@ -13,6 +13,7 @@ int main() {
     cout << "Enter the number of the elements : ";
     cin >> n;
     int arr[n];
+    cout << "Enter the elements one by one : ";
     for (int i = 0; i < n; i++)
     {
         cin >> arr[i];
