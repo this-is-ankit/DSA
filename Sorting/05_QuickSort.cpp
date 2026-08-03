@@ -2,33 +2,35 @@
 using namespace std;
 int Partition(vector<int> &v, int low, int high)
 {
-    int i = low, j = high;
-    while (low < high)
+    int i = low, j = high, pivot = v[low];
+    while (i < j)
     {
-        int pivot = v[0];
-
-        while (v[i] >= pivot)
+        while (v[i] <= pivot && i <= high - 1)
         {
             i++;
         }
-        while (v[j] < pivot)
+        while (v[j] > pivot && j >= low + 1)
         {
-            j++;
+            j--;
         }
-        swap(v[i], v[j]);
+        if (i < j)
+            swap(v[i], v[j]);
     }
+    swap(v[low] , v[j]);
     return j;
 }
 void Quicksort(vector<int> &v, int low, int high)
 {
     if (low < high)
-        return;
-    int pivot = Partition(v, low, high);
-    Quicksort(v, low, pivot);
-    Quicksort(v, pivot + 1, high);
+    {
+        int pivot = Partition(v, low, high);
+        Quicksort(v, low, pivot - 1);
+        Quicksort(v, pivot + 1, high);
+    }
 }
 
-int main(){
+int main()
+{
     int n;
     cin >> n;
     vector<int> v;
@@ -38,10 +40,9 @@ int main(){
         cin >> j;
         v.push_back(j);
     }
-    Quicksort(v,0,n-1);
+    Quicksort(v, 0, n - 1);
     for (int i = 0; i < n; i++)
     {
         cout << v[i] << " ";
     }
-    
 }
