@@ -22,7 +22,13 @@ bool isValid(string s)
     }
     return st.empty();
 }
+
+
 // This is one more solution that i fugured out, which uses no stack and makes the input string behave as stack
+
+// # Intuition
+// Since a valid string will always resolve its brackets sequentially, we can reuse the memory of the input string itself as our stack. This drops the auxiliary space from $O(N)$ to $O(1)$.
+
 // # Approach
 // 1. Use an integer `top` initialized to `-1` to represent the top of our in-place stack.
 // 2. Iterate through the string. If it is an opening bracket, increment `top` and overwrite the string at that index.
