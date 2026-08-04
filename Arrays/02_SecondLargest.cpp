@@ -33,6 +33,7 @@ int main()
     if (n == 1)
     {
         cout << "The largest and second largest element is same : " << arr[n-1];
+        return 0;
     }
     cout << "The Second largest element in the given array is : " << secondLargest(arr, n);
     return 0;
