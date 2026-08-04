@@ -20,23 +20,21 @@ vector<int> findMissingElements(vector<int> &nums)
             return temp;
         int found = 0;
         for (int j = 0; j < n; j++)
-        {
             if (nums[j] == s)
-            {
                 found++;
-            }
-        }
-        if (found == 0)
+        if (!found)
         {
             temp.push_back(s);
         }
     }
     return temp;
 }
-int main(){
-    vector<int> arr = {7,8,6,9};
-    vector<int> temp  = findMissingElements(arr);
-    for(auto it : temp){
+int main()
+{
+    vector<int> arr = {5,1};
+    vector<int> temp = findMissingElements(arr);
+    for (auto it : temp)
+    {
         cout << it << " ";
     }
     return 0;
