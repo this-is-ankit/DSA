@@ -27,6 +27,7 @@ vector<int> findMissingElements(vector<int> &nums)
             temp.push_back(s);
         }
     }
+    
     return temp;
 }
 int main()
