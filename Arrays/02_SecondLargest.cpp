@@ -1,14 +1,26 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-int Largest(int arr[] , int n){
+int secondLargest(int arr[], int n)
+{
     int l = arr[0];
+    int elements[n], j = -1;
     for (int i = 0; i < n; i++)
     {
-        if(arr[i] > l) l = arr[i];
+        if (arr[i] > l)
+        {
+            l = arr[i];
+            j++;
+            elements[j] = l;
+        }
     }
-return l;
+    while (elements[j] == l)
+    {
+        j--;
+    }
+    return elements[j];
 }
-int main() {
+int main()
+{
     int n;
     cout << "Enter the number of the elements : ";
     cin >> n;
@@ -18,6 +30,11 @@ int main() {
     {
         cin >> arr[i];
     }
-    cout << "The largest element in the given array is : " << Largest(arr,n);
+    if (n == 1)
+    {
+        cout << "The largest and second largest element is same : ";
+        return arr[n - 1];
+    }
+    cout << "The Second largest element in the given array is : " << secondLargest(arr, n);
     return 0;
 }
