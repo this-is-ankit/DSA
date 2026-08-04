@@ -6,7 +6,7 @@ int secondLargest(int arr[], int n)
     int elements[n], j = -1;
     for (int i = 0; i < n; i++)
     {
-        if (arr[i] > l)
+        if (arr[i] >= l)
         {
             l = arr[i];
             j++;
@@ -32,8 +32,7 @@ int main()
     }
     if (n == 1)
     {
-        cout << "The largest and second largest element is same : ";
-        return arr[n - 1];
+        cout << "The largest and second largest element is same : " << arr[n-1];
     }
     cout << "The Second largest element in the given array is : " << secondLargest(arr, n);
     return 0;
