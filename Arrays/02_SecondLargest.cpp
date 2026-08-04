@@ -24,6 +24,10 @@ int main()
     int n;
     cout << "Enter the number of the elements : ";
     cin >> n;
+    if(n <= 0){
+        cout << "Enter any valid size of the array";
+        return 0;
+    }
     int arr[n];
     cout << "Enter the elements one by one : ";
     for (int i = 0; i < n; i++)
