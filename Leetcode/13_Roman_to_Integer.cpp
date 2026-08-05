@@ -32,6 +32,6 @@ int romanToInt(string s)
 int main()
 {
     string s = "LVIII";
-    cout << romanToInt(s);
+    cout << "The integer of the corresponding string is : " << romanToInt(s);
     return 0;
 }
