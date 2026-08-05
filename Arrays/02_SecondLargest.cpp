@@ -2,18 +2,25 @@
 using namespace std;
 int secondLargest(int arr[], int n)
 {
-    int l = arr[0];
+    int l = arr[0]; int s = arr[0];
     int elements[n], j = -1;
     for (int i = 0; i < n; i++)
     {
-        if (arr[i] >= l)
+        if(arr[i]<= s){
+            s = arr[i];
+        }
+    }
+    
+    for (int i = 1; i < n; i++)
+    {
+        if (arr[i] >= s)
         {
             l = arr[i];
             j++;
             elements[j] = l;
         }
     }
-    while (elements[j] == l)
+    while (elements[j] == l  && j >= 0)
     {
         j--;
     }
