@@ -7,5 +7,6 @@ int strStr(string haystack, string needle) {
 int main(){
     string haystack = "sadbutsad";
     string needle = "sad";
+    cout << strStr(haystack,needle);
     return 0;
 }
