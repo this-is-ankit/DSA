@@ -6,6 +6,6 @@ int strStr(string haystack, string needle) {
     }
 int main(){
     string haystack = "sadbutsad";
-    
+    string needle = "sad";
     return 0;
 }
