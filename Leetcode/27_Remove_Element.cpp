@@ -10,6 +10,7 @@ using namespace std;
         return k;
     }
 int main(){
-    vector<int>nums;
-    
+    vector<int>nums = {3,2,2,3};
+    cout << removeElement(nums,3);
+    return 0;
 }
