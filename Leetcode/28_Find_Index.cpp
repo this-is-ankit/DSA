@@ -5,7 +5,7 @@ int strStr(string haystack, string needle) {
         return pos != string::npos ? pos : -1;
     }
 int main(){
-    string haystack = "sadbutsad";
+    string haystack = "leetcode";
     string needle = "sad";
     cout << strStr(haystack,needle);
     return 0;
