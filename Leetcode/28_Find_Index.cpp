@@ -5,6 +5,7 @@ int strStr(string haystack, string needle) {
         return pos != string::npos ? pos : -1;
     }
 int main(){
-
+    string haystack = "sadbutsad";
+    
     return 0;
 }
