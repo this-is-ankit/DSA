@@ -6,7 +6,7 @@ int strStr(string haystack, string needle) {
     }
 int main(){
     string haystack = "leetcode";
-    string needle = "leeto";
+    string needle = "leeto;";
     cout << strStr(haystack,needle);
     return 0;
 }
