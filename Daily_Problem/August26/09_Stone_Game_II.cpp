@@ -34,6 +34,7 @@ int stoneGameII(vector<int> &piles)
 }
 int main()
 {
+    vector<int> piles = {2,7,9,4,4};
     
     return 0;
 }
