@@ -14,6 +14,17 @@ int solve(int i, int m) {
         }
         return dp[i][m] = ans;
     }
+    int stoneGameII(vector<int>& piles) {
+        n = piles.size();
+        memset(dp, -1, sizeof(dp));
+        
+        suf[n - 1] = piles[n - 1];
+        for (int i = n - 2; i >= 0; i--) {
+            suf[i] = suf[i + 1] + piles[i];
+        }
+
+        return solve(0, 1);
+    }
 int main(){
     return 0;
 }
