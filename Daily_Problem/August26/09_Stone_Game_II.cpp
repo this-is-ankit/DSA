@@ -1,30 +1,38 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 int dp[101][101];
-    int suf[101];
-    int n;
-int solve(int i, int m) {
-        if (i >= n) return 0;
-        if (i + 2 * m >= n) return suf[i];
-        if (dp[i][m] != -1) return dp[i][m];
+int suf[101];
+int n;
+int solve(int i, int m)
+{
+    if (i >= n)
+        return 0;
+    if (i + 2 * m >= n)
+        return suf[i];
+    if (dp[i][m] != -1)
+        return dp[i][m];
 
-        int ans = 0;
-        for (int x = 1; x <= 2 * m; x++) {
-            ans = max(ans, suf[i] - solve(i + x, max(m, x)));
-        }
-        return dp[i][m] = ans;
+    int ans = 0;
+    for (int x = 1; x <= 2 * m; x++)
+    {
+        ans = max(ans, suf[i] - solve(i + x, max(m, x)));
     }
-    int stoneGameII(vector<int>& piles) {
-        n = piles.size();
-        memset(dp, -1, sizeof(dp));
-        
-        suf[n - 1] = piles[n - 1];
-        for (int i = n - 2; i >= 0; i--) {
-            suf[i] = suf[i + 1] + piles[i];
-        }
+    return dp[i][m] = ans;
+}
+int stoneGameII(vector<int> &piles)
+{
+    n = piles.size();
+    memset(dp, -1, sizeof(dp));
 
-        return solve(0, 1);
+    suf[n - 1] = piles[n - 1];
+    for (int i = n - 2; i >= 0; i--)
+    {
+        suf[i] = suf[i + 1] + piles[i];
     }
-int main(){
+
+    return solve(0, 1);
+}
+int main()
+{
     return 0;
 }
