@@ -24,3 +24,8 @@
 
 //     1 <= nums.length <= 50
 //     1 <= nums[i] <= 50
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    return 0;
+}
