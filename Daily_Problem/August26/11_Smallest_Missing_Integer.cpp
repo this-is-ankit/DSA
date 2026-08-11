@@ -4,8 +4,6 @@
 
 // Return the smallest integer x missing from nums such that x is greater than or equal to the sum of the longest sequential prefix.
 
- 
-
 // Example 1:
 
 // Input: nums = [1,2,3,2,5]
@@ -18,14 +16,39 @@
 // Output: 15
 // Explanation: The longest sequential prefix of nums is [3,4,5] with a sum of 12. 12, 13, and 14 belong to the array while 15 does not. Therefore 15 is the smallest missing integer greater than or equal to the sum of the longest sequential prefix.
 
- 
-
 // Constraints:
 
 //     1 <= nums.length <= 50
 //     1 <= nums[i] <= 50
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-int main(){
+int missingInteger(vector<int> &nums)
+{
+    int s = nums[0];
+    int n = nums.size();
+    for (int i = 1; i < n; i++)
+    {
+        if (nums[i] == nums[i - 1] + 1)
+        {
+            s += nums[i];
+        }
+        else
+        {
+            break;
+        }
+    }
+
+    unordered_set<int> st(nums.begin(), nums.end());
+    while (st.count(s))
+    {
+        s++;
+    }
+
+    return s;
+}
+int main()
+{
+    vector<int> nums = {1,2,3,2,5};
+    cout << missingInteger(nums);
     return 0;
 }
