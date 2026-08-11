@@ -32,4 +32,8 @@
 //     0 <= n <= 1000
 //     1 <= m + n <= 2000
 //     -106 <= nums1[i], nums2[i] <= 106
-
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    return 0;
+}
