@@ -22,6 +22,6 @@ int mySqrt(int x)
 }
 int main()
 {
-    cout << mySqrt(4);
+    cout << mySqrt(8);
     return 0;
 }
