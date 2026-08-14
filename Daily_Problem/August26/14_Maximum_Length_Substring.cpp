@@ -1,20 +1,25 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-int maximumLengthSubstring(string s) {
-        vector<int> cnt(26, 0);
-        int l = 0, ans = 0;
-        
-        for (int r = 0; r < s.size(); r++) {
-            cnt[s[r] - 'a']++;
-            while (cnt[s[r] - 'a'] > 2) {
-                cnt[s[l] - 'a']--;
-                l++;
-            }
-            ans = max(ans, r - l + 1);
+int maximumLengthSubstring(string s)
+{
+    vector<int> cnt(26, 0);
+    int l = 0, ans = 0;
+
+    for (int r = 0; r < s.size(); r++)
+    {
+        cnt[s[r] - 'a']++;
+        while (cnt[s[r] - 'a'] > 2)
+        {
+            cnt[s[l] - 'a']--;
+            l++;
         }
-        
-        return ans;
+        ans = max(ans, r - l + 1);
     }
-int main(){
+
+    return ans;
+}
+int main()
+{
+    string s = "bcbbbcba";
     return 0;
 }
