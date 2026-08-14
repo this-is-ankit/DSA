@@ -21,5 +21,6 @@ int maximumLengthSubstring(string s)
 int main()
 {
     string s = "bcbbbcba";
+    cout << maximumLengthSubstring(s);
     return 0;
 }
