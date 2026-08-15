@@ -15,5 +15,7 @@ int removeDuplicates(vector<int> &nums){
      
 }
 int main(){
+    vector<int> nums = {1,2,2,5,4,8,8,8};
+    cout << removeDuplicates(nums);
     return 0;
 }
