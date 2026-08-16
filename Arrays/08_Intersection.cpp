@@ -7,37 +7,27 @@ vector<int> Union(vector<int> &a, vector<int> &b)
     vector<int> temp;
     while (i < n1 && j < n2)
     {
-        if (a[i] <= b[j])
+        if (a[i] == b[j])
         {
-            if (temp.size() == 0 || a[i] == temp.back())
-                temp.push_back(a[i]);
+            temp.push_back(a[i]);
             i++;
+            j++;
+        }
+        else if (a[i] > b[j])
+        {
+            j++;
         }
         else
         {
-            if (temp.size() == 0 || b[j] == temp.back())
-                temp.push_back(b[j]);
-            j++;
+            i++;
         }
-    }
-    while (i < n1)
-    {
-        if (temp.size() == 0 || a[i] == temp.back())
-            temp.push_back(a[i]);
-        i++;
-    }
-    while (j < n2)
-    {
-        if (temp.size() == 0 || b[j] == temp.back())
-            temp.push_back(b[j]);
-        j++;
     }
     return temp;
 }
 int main()
 {
-    vector<int> a = {1, 2, 5, 6, 7, 8};
-    vector<int> b = {1, 2, 3, 5, 8, 9, 11};
+    vector<int> a = {1, 2, 2, 3, 3, 4, 5, 6};
+    vector<int> b = {2, 3, 3, 5, 6, 6, 7};
     vector<int> temp = Union(a, b);
     for (auto it : temp)
     {
