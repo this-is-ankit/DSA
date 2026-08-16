@@ -22,4 +22,10 @@ void moveZeroes(vector<int> &nums)
 }
 int main()
 {
+    vector<int> nums = {2,0,1,5,4,0,0,0,1,0,8,0};
+     moveZeroes(nums);
+     for(auto it : nums){
+        cout << it << " ";
+     }
+     return 0;
 }
