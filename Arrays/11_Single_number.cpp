@@ -2,8 +2,8 @@
 using namespace std;
 int singleNumber(vector<int> &nums)
 {
-    int l = 1, h = nums.size() - 1, i = 0;
-    int temp = nums[i];
+    int h = nums.size() - 1, i = 0, l = 1;
+    int temp = nums[0];
     while (l <= h)
     {
         if (nums[l] != temp && nums[h] != temp)
@@ -15,13 +15,14 @@ int singleNumber(vector<int> &nums)
         {
             i++;
             temp = nums[i];
+            l = i + 1;
         }
     }
     return temp;
 }
 int main()
 {
-    vector<int> nums = {4, 1, 2, 1, 2};
+    vector<int> nums = {2, 2, 1};
     cout << singleNumber(nums);
     return 0;
 }
