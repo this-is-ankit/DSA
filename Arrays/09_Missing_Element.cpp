@@ -36,7 +36,8 @@ using namespace std;
 // the difference is the number that was missing
 
 // The other one is using XOR operation//
-// xor operation with the same number canclels each other
+// xor operation with the same number cancles each other
+// 0 xor any number is the number itself
 int missing(vector<int> &nums)
 {
     int xor1 = 0,xor2=0;
