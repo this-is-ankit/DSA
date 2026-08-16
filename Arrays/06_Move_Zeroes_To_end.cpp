@@ -18,14 +18,16 @@ void moveZeroes(vector<int> &nums)
     while (i < n)
     {
         nums[i] = 0;
+        i++;
     }
 }
 int main()
 {
-    vector<int> nums = {2,0,1,5,4,0,0,0,1,0,8,0};
-     moveZeroes(nums);
-     for(auto it : nums){
+    vector<int> nums = {2, 0, 1, 5, 4, 0, 0, 0, 1, 0, 8, 0};
+    moveZeroes(nums);
+    for (auto it : nums)
+    {
         cout << it << " ";
-     }
-     return 0;
+    }
+    return 0;
 }
