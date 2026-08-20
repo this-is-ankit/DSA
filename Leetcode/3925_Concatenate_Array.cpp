@@ -12,5 +12,9 @@ vector<int> concatWithReverse(vector<int> &nums)
 }
 int main()
 {
+    vector<int> nums  = {1,2,3};
+    vector temp = concatWithReverse(nums);
+    for(int x: temp)
+        cout << x << " ";
     return 0;
 }
