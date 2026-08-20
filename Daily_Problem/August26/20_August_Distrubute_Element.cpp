@@ -19,5 +19,10 @@ using namespace std;
     }
 int main()
 {
+    vector<int> nums = {5,4,3,8};
+    vector <int> temp = resultArray(nums);
+    for(auto num : temp){
+        cout<< num << " ";
+    }
     return 0;
 }
