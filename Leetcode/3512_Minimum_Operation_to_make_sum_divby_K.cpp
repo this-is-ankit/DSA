@@ -10,6 +10,8 @@ int minOperations(vector<int> &nums, int k)
 }
 int main()
 {
+    vector<int> nums = {3,9,7};
+    cout << minOperations(nums,5);
 
     return 0;
 }
