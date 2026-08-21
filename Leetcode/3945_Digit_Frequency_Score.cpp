@@ -17,6 +17,6 @@ int digitFrequencyScore(int n)
 }
 int main()
 {
-
+    cout << digitFrequencyScore(122);
     return 0;
 }
